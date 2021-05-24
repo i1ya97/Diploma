@@ -1,0 +1,21 @@
+<h1 id="tableLabel">Clusters</h1>
+<p *ngIf="!clusters"><em>Loading...</em></p>
+
+<table class='table table-striped' aria-labelledby="tableLabel" *ngIf="clusters">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Tags</th>
+      <th>AttributeType</th>
+      <th>Distance</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let cluster of clusters">
+      <td>{{ cluster.id }}</td>
+      <td>{{ cluster.tagVector }}</td>
+      <td>{{ cluster.attributeTypeId }}</td>
+      <td>{{ cluster.distance }}</td>
+    </tr>
+  </tbody>
+</table>
