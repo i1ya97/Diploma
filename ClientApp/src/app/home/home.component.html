@@ -1,7 +1,19 @@
 <h1 id="tableLabel">Clusters</h1>
-<p *ngIf="!clusters"><em>Loading...</em></p>
+<!-- <p *ngIf="!clusters"><em>Loading...</em></p> -->
 
-<table class='table table-striped' aria-labelledby="tableLabel" *ngIf="clusters">
+<chips-input [words]="words"></chips-input>
+
+<section class="example-section">
+  <label class="example-margin">Type:</label>
+  <mat-radio-group [(ngModel)]="selectedType" *ngFor="let type of types;">
+    <br/>
+    <mat-radio-button class="example-margin" value={{type.id}}>{{type.name}}</mat-radio-button>
+  </mat-radio-group>
+</section>
+<br/>
+<button mat-raised-button (click)="onClick()">Send</button>
+
+<!-- <table class='table table-striped' aria-labelledby="tableLabel" *ngIf="clusters">
   <thead>
     <tr>
       <th>ID</th>
@@ -18,4 +30,4 @@
       <td>{{ cluster.distance }}</td>
     </tr>
   </tbody>
-</table>
+</table> -->

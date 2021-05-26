@@ -1,0 +1,14 @@
+<div>
+  <mat-form-field class="example-chip-list">
+    <mat-label>Key words</mat-label>
+    <mat-chip-list #chipList aria-label="Key words">
+      <mat-chip *ngFor="let word of words" [selectable]="selectable" [removable]="removable"
+        (removed)="remove(word)">
+        {{word}}
+        <mat-icon matChipRemove *ngIf="removable">cancel</mat-icon>
+      </mat-chip>
+      <input placeholder="Key word" #fruitInput [formControl]="wordsCtrl" [matChipInputFor]="chipList"
+        [matChipInputSeparatorKeyCodes]="separatorKeysCodes" (matChipInputTokenEnd)="add($event)">
+    </mat-chip-list>
+  </mat-form-field>
+</div>
